@@ -1,5 +1,5 @@
 #!/bin/bash
-for f in bash tmux nvim urxvt git
+for f in bash tmux nvim urxvt git docker
 do
   stow -D $f
   stow $f
