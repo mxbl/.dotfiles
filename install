@@ -1,4 +1,14 @@
 #!/bin/bash
+
+# I prefer that to be a directory
+mkdir -p $HOME/.config
+
+# Clean every old config files
+[[ -f $HOME/.bashrc     ]] && rm $HOME/.bashrc
+[[ -f $HOME/.Xresources ]] && rm $HOME/.Xresources
+[[ -f $HOME/.tmux.conf  ]] && rm $HOME/.tmux.conf
+[[ -f $HOME/.gitignore  ]] && rm $HOME/.gitignore
+
 for f in bash tmux nvim urxvt git docker
 do
   stow -D $f
