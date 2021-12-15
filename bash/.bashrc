@@ -101,12 +101,12 @@ function suspendp { kill -TSTP `pgrep $1` ; }
 function contp { kill -CONT `pgrep $1` ; }
 
 function mkd { mkdir -p "$1" ; cd "$1" ; }
-function tmuxbg { tmux select-pane -P "$color" }
+function tmuxbg { tmux select-pane -P "$color" ; }
 function swapcaps { setxkbmap -option "ctrl:swapcaps" ; }
 
 # Fuzzy change directory
-function fcd { cd $(find -type d | fzf) }
-alias ,f='fcd'
+function fcd { cd $(find -type d | fzf) ; }
+#alias ,f='fcd'
 # }}}
 # Navigate places {{{
 # requirements:
@@ -155,7 +155,7 @@ LightGray='\e[0;37m'
 DarkGray='\e[1;30m'
 Normal='\e[0m'
 
-function help/nmap() {
+function help/nmap {
     echo -e "${White}Flags:${Normal}"
     echo -e " -sC  ${DarkGray}scan with default NSE scripts (discovery,save)${Normal}"
     echo -e " -sV  ${DarkGray}attempts to determine the version of service${Normal}"
@@ -169,7 +169,7 @@ function help/nmap() {
     echo -e " • nmap -vvv -sU -oA FILENAME-1000udp HOSTNAME/IP"
 }
 
-function help/marker () {
+function help/marker {
     echo -e "Ctrl-space     ${DarkGray}search for commands that match the current written string in the command-line${Normal}"
     echo -e "Ctrl-k         ${DarkGray}(or marker mark): Bookmark a command${Normal}"
     echo -e "Ctrl-t         ${DarkGray}place the cursor at the next placeholder, identified by '{{anything}}'${Normal}"
