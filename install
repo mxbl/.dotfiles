@@ -1,0 +1,6 @@
+#!/bin/bash
+for f in bash tmux nvim urxvt git
+do
+  stow -D $f
+  stow $f
+done
