@@ -138,7 +138,7 @@ hi VertSplit    ctermbg=NONE ctermfg=Red cterm=Bold
 hi NonText      ctermfg=237
 hi SpecialKey   ctermfg=237
 hi LineNr       ctermfg=237
-hi CursorLineNr ctermfg=Red ctermbg=234
+hi CursorLineNr cterm=NONE ctermfg=Red ctermbg=234
 set cursorline
 hi CursorLine cterm=NONE ctermbg=234
 
