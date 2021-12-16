@@ -3,11 +3,21 @@
 # I prefer that to be a directory
 mkdir -p $HOME/.config
 
-# Clean every old config files
-[[ -f $HOME/.bashrc     ]] && rm $HOME/.bashrc
-[[ -f $HOME/.Xresources ]] && rm $HOME/.Xresources
-[[ -f $HOME/.tmux.conf  ]] && rm $HOME/.tmux.conf
-[[ -f $HOME/.gitignore  ]] && rm $HOME/.gitignore
+alldots=(            \
+  $HOME/.bashrc      \
+  $HOME/.Xresourcas  \
+  $HOME/.Xdefaults   \
+  $HOME/.tmux.conf   \
+  $HOME/.gitconfig   \
+  $HOME/.config/nvim \
+  $HOME/.tmux        \
+)
+
+# Clean old config files and directories
+for p in "${alldots[@]}"
+do
+  rm -rfv $p
+done
 
 for f in bash tmux nvim urxvt git docker
 do
