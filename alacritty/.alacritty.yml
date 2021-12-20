@@ -64,10 +64,10 @@ font:
   normal:
     family: JetBrains Mono
   bold:
-    family: Monaco
+    family: JetBrains Mono
     style: Bold
   italic:
-    family: Monaco
+    family: JetBrains Mono
     style: Italic
   size: 12.5
   offset:
@@ -89,85 +89,127 @@ render_timer: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
+# Base16 Seti UI 256 - alacritty color config
+# 
 colors:
   # Default colors
   primary:
     background: '0x000000'
-    foreground: '0xeaeaea'
+    foreground: '0xd8d8d8'
 
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #
-    #dim_foreground: '0x9a9a9a'
-    #bright_foreground: '0xffffff'
-
-  # Cursor colors
-  #
-  # These will only be used when the `custom_cursor_colors` field is set to `true`.
+  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x000000'
-    cursor: '0xffffff'
-
-    # Cursor style
-    #
-    # Values for 'cursor.style':
-    #   - Block
-    #   - Underline
-    #   - Beam
-    style: Block
-
-    # If this is `true`, the cursor will be rendered as a hollow box when the
-    # window is not focused.
-    unfocused_hollow: true
-
+    text: '0x151718'
+    cursor: '0xffb6c1'
 
   # Normal colors
   normal:
     black:   '0x000000'
-    red:     '0xd54e53'
-    green:   '0xb9ca4a'
-    yellow:  '0xe6c547'
-    blue:    '0x7aa6da'
-    magenta: '0xc397d8'
-    cyan:    '0x70c0ba'
-    white:   '0xffffff'
+    red:     '0xcd3f45'
+    green:   '0x9fca56'
+    yellow:  '0xe6cd69'
+    blue:    '0x55b5db'
+    magenta: '0xa074c4'
+    cyan:    '0x55dbbe'
+    white:   '0xd8d8d8'
 
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xe7c547'
-    blue:    '0x7aa6da'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
-    white:   '0xffffff'
+    black:   '0x000000'
+    red:     '0xea0000'
+    green:   '0x9fca56'
+    yellow:  '0xeaeb00'
+    blue:    '0x55b5db'
+    magenta: '0xeb00be'
+    cyan:    '0x00ebea'
+    white:   '0xd8d8d8'
 
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+  indexed_colors:
+    - { index: 16, color: '0xdb7b55' }
+    - { index: 17, color: '0x8a553f' }
+    - { index: 18, color: '0x282a2b' }
+    - { index: 19, color: '0x3b758c' }
+    - { index: 20, color: '0x43a5d5' }
+    - { index: 21, color: '0xeeeeee' }
 
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  #indexed_colors:
-  #  - { index: 16, color: '0x000000' }
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0x000000'
+#    foreground: '0xeaeaea'
+#
+#    # Bright and dim foreground colors
+#    #
+#    # The dimmed foreground color is calculated automatically if it is not present.
+#    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+#    # is `false`, the normal foreground color will be used.
+#    #
+#    #dim_foreground: '0x9a9a9a'
+#    #bright_foreground: '0xffffff'
+#
+#  # Cursor colors
+#  #
+#  # These will only be used when the `custom_cursor_colors` field is set to `true`.
+#  cursor:
+#    text: '0x000000'
+#    cursor: '0xffffff'
+#
+#    # Cursor style
+#    #
+#    # Values for 'cursor.style':
+#    #   - Block
+#    #   - Underline
+#    #   - Beam
+#    style: Block
+#
+#    # If this is `true`, the cursor will be rendered as a hollow box when the
+#    # window is not focused.
+#    unfocused_hollow: true
+#
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x000000'
+#    red:     '0xd54e53'
+#    green:   '0xb9ca4a'
+#    yellow:  '0xe6c547'
+#    blue:    '0x7aa6da'
+#    magenta: '0xc397d8'
+#    cyan:    '0x70c0ba'
+#    white:   '0xffffff'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0x666666'
+#    red:     '0xff3334'
+#    green:   '0x9ec400'
+#    yellow:  '0xe7c547'
+#    blue:    '0x7aa6da'
+#    magenta: '0xb77ee0'
+#    cyan:    '0x54ced6'
+#    white:   '0xffffff'
+#
+#  # Dim colors
+#  #
+#  # If the dim colors are not set, they will be calculated automatically based
+#  # on the `normal` colors.
+#  dim:
+#    black:   '0x333333'
+#    red:     '0xf2777a'
+#    green:   '0x99cc99'
+#    yellow:  '0xffcc66'
+#    blue:    '0x6699cc'
+#    magenta: '0xcc99cc'
+#    cyan:    '0x66cccc'
+#    white:   '0xdddddd'
+#
+#  # Indexed Colors
+#  #
+#  # The indexed colors include all colors from 16 to 256.
+#  # When these are not set, they're filled with sensible defaults.
+#  #
+#  #indexed_colors:
+#  #  - { index: 16, color: '0x000000' }
 
 # Visual Bell
 # Specifying a `duration` of `0` will disable the visual bell.
