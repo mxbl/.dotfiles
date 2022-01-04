@@ -19,7 +19,7 @@ do
   rm -rfv $p
 done
 
-for f in bash tmux nvim urxvt git docker
+for f in bash tmux nvim urxvt git docker alacritty
 do
   stow -D $f
   stow $f

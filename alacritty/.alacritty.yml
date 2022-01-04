@@ -14,16 +14,6 @@
   # TERM: xterm-256color
 
 window:
-  # Window dimensions (changes require restart)
-  #
-  # Specified in number of columns/lines, not pixels.
-  # If both are `0`, this setting is ignored.
-  #dimensions:
-  #  columns: 60
-  #  lines: 20
-
-  #dynamic_title: false
-
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is not scaled
@@ -32,23 +22,8 @@ window:
     x: 2
     y: 2
 
-  # Window decorations
-  #
-  # Available values:
-  # - `full`: Window with title bar and title bar buttons
-  # - `none`: Window without title bar, rounded corners, or drop shadow
-  # - `transparent`: Window with title bar with transparent background and title
-  #   bar buttons
-  # - `buttonless`: Window with title bar with transparent background and no
-  #   title bar buttons
-  # Window decorations
-  #
-  # Values for `decorations`:
-  #     - full: Borders and title bar
-  #     - none: Neither borders nor title bar
-  #     - buttonless: Title bar, transparent background and title bar buttons
-  #     - transparent: Title bar, transparent background, but no title bar buttons
   decorations: none
+  opacity: 1.0
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -99,14 +74,14 @@ colors:
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x151718'
-    cursor: '0xffb6c1'
+    text:   '0x2b2c2b'
+    cursor: '0xff0099'
 
   # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xcd3f45'
-    green:   '0x9fca56'
+    green:   '0x33ff00'
     yellow:  '0xe6cd69'
     blue:    '0x55b5db'
     magenta: '0xa074c4'
@@ -117,7 +92,7 @@ colors:
   bright:
     black:   '0x000000'
     red:     '0xea0000'
-    green:   '0x9fca56'
+    green:   '0x33ff00'
     yellow:  '0xeaeb00'
     blue:    '0x55b5db'
     magenta: '0xeb00be'
@@ -217,11 +192,6 @@ bell:
   animation: EaseOutExpo
   duration: 0
 
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
 
 # Mouse bindings
 #
