@@ -55,6 +55,8 @@ Plug 'nvim-lua/plenary.nvim' " don't forget to add this one if you don't have it
 Plug 'nvim-lua/popup.nvim'
 Plug 'ThePrimeagen/harpoon'
 
+Plug 'dag/vim-fish'
+
 call plug#end()
 
 lua require('testingmodule')
