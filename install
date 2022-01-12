@@ -11,6 +11,7 @@ alldots=(            \
   $HOME/.gitconfig   \
   $HOME/.config/nvim \
   $HOME/.tmux        \
+  $HOME/.dwm         \
 )
 
 # Clean old config files and directories
@@ -19,7 +20,7 @@ do
   rm -rfv $p
 done
 
-for f in bash tmux nvim urxvt git docker alacritty
+for f in bash tmux nvim urxvt git docker alacritty dwm
 do
   stow -D $f
   stow $f
