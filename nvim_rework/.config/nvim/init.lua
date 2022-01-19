@@ -20,6 +20,7 @@ require('packer').startup({
     use({ 'christoomey/vim-tmux-navigator' })
     use({ 'dag/vim-fish' })
     use({ 'SidOfc/mkdx' })
+    use({ 'chase/vim-ansible-yaml' })
 
     if packer_bootstrap then
       require('packer').sync()
