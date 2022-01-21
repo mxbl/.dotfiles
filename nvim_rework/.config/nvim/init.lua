@@ -14,13 +14,22 @@ require('packer').startup({
     use({ 'lewis6991/impatient.nvim' })
     use({ 'wbthomason/packer.nvim' })
     use({ 'tpope/vim-surround' })
-    use({ 'junegunn/fzf' })
-    use({ 'junegunn/fzf.vim' })
     use({ 'junegunn/vim-easy-align' })
     use({ 'christoomey/vim-tmux-navigator' })
-    use({ 'dag/vim-fish' })
     use({ 'SidOfc/mkdx' })
+    use({ 'dag/vim-fish' })
     use({ 'chase/vim-ansible-yaml' })
+    use({ 'tpope/vim-fugitive' })
+    use({ 'gruvbox-community/gruvbox' })
+
+    -- Telescope
+    use({ 'nvim-lua/popup.nvim' })
+    use({ 'nvim-lua/plenary.nvim' })
+    use({ 'nvim-telescope/telescope.nvim' })
+    use({ 'nvim-telescope/telescope-file-browser.nvim' })
+
+    -- Harpoon
+    use({ 'ThePrimeagen/harpoon' })
 
     if packer_bootstrap then
       require('packer').sync()
@@ -36,27 +45,6 @@ require('packer').startup({
 -- Set this early, because otherwise any mapping before doing this,
 -- will be set to the old leader
 vim.g.mapleader = ","
-
--- colorscheme and misc highlightings {{{
-vim.cmd([[
-hi ColorColumn  ctermbg=234
-hi Vertsplit    ctermfg=red   ctermbg=NONE cterm=bold
-hi NonText      ctermfg=237
-hi SpecialKey   ctermfg=237
-hi LineNr       ctermfg=237
-hi CursorLineNr ctermfg=red   ctermbg=234 cterm=NONE
-hi CursorLine                 ctermbg=234 cterm=NONE
-hi PMenu        ctermfg=white ctermbg=237
-hi PMenuSel     ctermfg=white ctermbg=161
-hi PMenuSbar    ctermfg=none  ctermbg=237
-hi PMenuThumb   ctermfg=none  ctermbg=24
-hi Folded                     ctermbg=NONE
-
-hi mkdxCheckboxComplete ctermfg=Green
-hi mkdxCheckboxPending  ctermfg=Yellow
-hi mkdxCheckboxEmpty    ctermfg=LightRed
-]])
--- }}}
 
 vim.cmd([[
   augroup InitAutoCommands

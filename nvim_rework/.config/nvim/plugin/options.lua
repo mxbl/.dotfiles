@@ -4,7 +4,6 @@ local opt = vim.opt
 
 opt.belloff = "all"
 
--- Tabs / Indentation
 opt.autoindent = true
 opt.cindent = true
 opt.wrap = true
@@ -18,6 +17,7 @@ opt.showbreak = string.rep(" ", 3) -- Long lines wrap smartly
 opt.linebreak = true
 opt.laststatus = 1
 opt.autowriteall = true
+opt.mouse = "a"
 
 opt.scrolloff = 7
 opt.showmatch = true
@@ -39,6 +39,8 @@ opt.pumblend = 17
 opt.wildmenu = true
 opt.wildmode = "longest:full:list"
 opt.wildoptions = "pum"
+opt.wildignore = "__pycache__"
+opt.wildignore = opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }
 
 opt.ruler = false
 opt.fillchars = { vert = "│", eob = "~" }
