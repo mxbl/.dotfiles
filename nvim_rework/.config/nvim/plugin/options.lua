@@ -20,7 +20,7 @@ opt.autowriteall = true
 opt.mouse = "a"
 
 opt.scrolloff = 7
-opt.showmatch = true
+opt.showmatch = false
 opt.relativenumber = true
 opt.number = true
 opt.ignorecase = true

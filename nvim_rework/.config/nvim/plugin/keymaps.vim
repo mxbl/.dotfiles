@@ -4,19 +4,15 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-" fzf
-nnoremap <leader>f :Files<cr>
-nnoremap <leader>b :Buffers<cr>
-
 " easyalign
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " quickfix list
-nnoremap <space>cj :cnext<cr>
-nnoremap <space>ck :cprev<cr>
+nnoremap <c-n> :cnext<cr>
+nnoremap <c-p> :cprev<cr>
 
-nmap <space>pv :Ex<cr>
+nmap <leader>pv :Ex<cr>
 
 " ?
 vnoremap <leader>d "_d

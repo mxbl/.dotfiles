@@ -18,9 +18,16 @@ require('packer').startup({
     use({ 'christoomey/vim-tmux-navigator' })
     use({ 'SidOfc/mkdx' })
     use({ 'dag/vim-fish' })
+    use({ 'rust-lang/rust.vim' })
     use({ 'chase/vim-ansible-yaml' })
     use({ 'tpope/vim-fugitive' })
+    use({ 'junegunn/gv.vim' })
     use({ 'gruvbox-community/gruvbox' })
+    --use({ 'ellisonleao/gruvbox.nvim' })
+
+    -- Treesitter
+    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+    use({ 'nvim-treesitter/playground' })
 
     -- Telescope
     use({ 'nvim-lua/popup.nvim' })
@@ -44,7 +51,7 @@ require('packer').startup({
 
 -- Set this early, because otherwise any mapping before doing this,
 -- will be set to the old leader
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 vim.cmd([[
   augroup InitAutoCommands
@@ -69,3 +76,5 @@ vim.g['mkdx#settings'] = {
 }
 -- mkdx will do nothing if this is set to 1
 vim.g.markdown_folding = 0
+
+require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
