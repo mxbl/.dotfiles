@@ -120,7 +120,7 @@ Xft.lcdfilter:           lcddefault
 Xcursor.theme: Adwaita
 Xcursor.size:  0
 
-URxvt.font:                       xft:Monaco:pixelsize=14
+URxvt.font:                       xft:JetBrains Mono:size=12
 URxvt.depth:                      32
 URxvt.background:                 [100]black
 URxvt*scrollBar:                  false
