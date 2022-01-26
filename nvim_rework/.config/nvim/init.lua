@@ -22,8 +22,12 @@ require('packer').startup({
     use({ 'chase/vim-ansible-yaml' })
     use({ 'tpope/vim-fugitive' })
     use({ 'junegunn/gv.vim' })
+
+    -- Colorschemes
     use({ 'gruvbox-community/gruvbox' })
-    --use({ 'ellisonleao/gruvbox.nvim' })
+    --use({ 'tjdevries/colorbuddy.vim' })
+    --use({ 'tjdevries/gruvbuddy.nvim' })
+    --use({ 'norcalli/nvim-colorizer.lua' })
 
     -- Treesitter
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
@@ -34,6 +38,7 @@ require('packer').startup({
     use({ 'nvim-lua/plenary.nvim' })
     use({ 'nvim-telescope/telescope.nvim' })
     use({ 'nvim-telescope/telescope-file-browser.nvim' })
+    use({ 'nvim-telescope/telescope-ui-select.nvim' })
 
     -- Harpoon
     use({ 'ThePrimeagen/harpoon' })
