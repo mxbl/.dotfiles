@@ -4,6 +4,9 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_invert_selection = 0
 colorscheme gruvbox
 
+"lua require('colorbuddy').colorscheme('gruvbuddy')
+"lua require('colorizer').setup()
+
 hi Normal                     guibg=NONE
 hi NonText                    guibg=NONE
 
@@ -15,15 +18,23 @@ hi Vertsplit    guifg=#ff0000 guibg=NONE
 hi LineNr       guifg=#3a3a3a
 hi SpecialKey   guifg=#3a3a3a
 hi Folded                     guibg=NONE
-"hi Comment      guifg=#3a3a3a guibg=NONE
 
-hi PMenu        guifg=#000000 guibg=#3a3a3a
-hi PMenuSel     guifg=#000000 guibg=#d7005f
-hi PMenuSbar    guifg=none    guibg=#3a3a3a
-hi PMenuThumb   guifg=none    guibg=#005f87
+hi Comment      guifg=#3a3a3a guibg=NONE
 
-hi netrwDir        guifg=#5eacd3
-hi TelescopeBorder guifg=#5eacd3
+"hi PMenu        guifg=#000000 guibg=#3a3a3a
+"hi PMenuSel     guifg=#000000 guibg=#d7005f
+"hi PMenuSbar    guifg=none    guibg=#3a3a3a
+"hi PMenuThumb   guifg=none    guibg=#005f87
+
+hi netrwDir               guifg=#5eacd3
+
+" Telescope
+hi TelescopeBorder        guifg=#1c1c1c
+hi TelescopeTitle         guifg=#5eacd3
+hi TelescopePromptBorder  guifg=#1c1c1c
+hi TelescopeResultsBorder guifg=#1c1c1c
+hi TelescopePreviewBorder guifg=#1c1c1c
+hi TelescopeMatching      guifg=#33ff00
 
 "hi Normal                     ctermbg=NONE
 "hi NonText      ctermfg=NONE  ctermbg=NONE 
