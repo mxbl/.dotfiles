@@ -4,10 +4,12 @@ if require "mx.first_load"() then
   return
 end
 
-function plugin_installed(plugin)
-  return vim.fn.isdirectory(
-    vim.fn.stdpath('data') .. '/site/pack/packer/start/' .. plugin) == 1
-end
+-- Set this early, because otherwise any mapping before doing this,
+-- will be set to the old leader
+vim.g.mapleader = " "
+
+-- Setup globals that I expect to be always available
+require "mx.globals"
 
 require('packer').startup({
   function()
@@ -17,7 +19,7 @@ require('packer').startup({
     use({ 'junegunn/vim-easy-align' })
     use({ 'christoomey/vim-tmux-navigator' })
     use({ 'SidOfc/mkdx' })
-    use({ 'dag/vim-fish' })
+    --use({ 'dag/vim-fish' })
     use({ 'rust-lang/rust.vim' })
     use({ 'chase/vim-ansible-yaml' })
     use({ 'tpope/vim-fugitive' })
@@ -25,9 +27,9 @@ require('packer').startup({
 
     -- Colorschemes
     use({ 'gruvbox-community/gruvbox' })
-    --use({ 'tjdevries/colorbuddy.vim' })
-    --use({ 'tjdevries/gruvbuddy.nvim' })
-    --use({ 'norcalli/nvim-colorizer.lua' })
+    use({ 'tjdevries/colorbuddy.vim' })
+    use({ 'tjdevries/gruvbuddy.nvim' })
+    use({ 'norcalli/nvim-colorizer.lua' })
 
     -- Treesitter
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
@@ -39,6 +41,9 @@ require('packer').startup({
     use({ 'nvim-telescope/telescope.nvim' })
     use({ 'nvim-telescope/telescope-file-browser.nvim' })
     use({ 'nvim-telescope/telescope-ui-select.nvim' })
+
+    -- Statusline
+    use({ 'tjdevries/express_line.nvim' })
 
     -- Harpoon
     use({ 'ThePrimeagen/harpoon' })
@@ -54,10 +59,6 @@ require('packer').startup({
   },
 })
 
--- Set this early, because otherwise any mapping before doing this,
--- will be set to the old leader
-vim.g.mapleader = " "
-
 vim.cmd([[
   augroup InitAutoCommands
     au!
@@ -71,7 +72,7 @@ vim.g['mkdx#settings'] = {
   gf_on_steroids = 1,
   enter = { shift = 1 },
   highlight = { enable = 1 },
-  fold = { enable = 1 },
+  fold = { enable = 0 },
   links = { external = { enable = 1 }},
   toc = {
     text = 'Table of Content',
