@@ -1,3 +1,6 @@
+" Shrug ¯\_(ツ)_/¯
+inoremap ,shrug ¯\_(ツ)_/¯
+
 " Moving between splits
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -16,6 +19,10 @@ endif
 
 nnoremap <silent><leader>tn :tabnext<cr>
 nnoremap <silent><leader>tp :tabprev<cr>
+
+" tabs
+nnoremap <right> gt
+nnoremap <left>  gT
 nnoremap <c-w>i :tabnext<cr>
 nnoremap <c-w>u :tabprev<cr>
 
