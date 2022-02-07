@@ -26,7 +26,10 @@ Group.new('CursorLine', nil, colors.darkgray0, nil)
 Group.new('Function',   colors.lightblue, nil, nil)
 Group.new('Special',    colors.lightblue, nil, nil)
 Group.new('Identifier', nil, nil, nil)
-Group.new('Folded'                     ctermbg=NONE
+Group.new('Folded',     colors.somegreen1, nil, nil)
+
+-- Lsp
+Group.new('SignColumn', nil, nil, nil)
 
 -- Telescope
 Group.new('TelescopeTitle',  colors.lightblue, nil, nil)

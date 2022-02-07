@@ -11,8 +11,11 @@ vim.g.mapleader = " "
 -- Setup globals that I expect to be always available
 require "mx.globals"
 
+-- Lsp configuration
+require "mx.lsp"
+
 require('packer').startup({
-  function()
+  function(use)
     use({ 'lewis6991/impatient.nvim' })
     use({ 'wbthomason/packer.nvim' })
     use({ 'tpope/vim-surround' })
@@ -45,12 +48,16 @@ require('packer').startup({
     -- Statusline
     use({ 'tjdevries/express_line.nvim' })
 
+    -- LSP
+    use 'tjdevries/nlua.nvim'
+    use 'neovim/nvim-lspconfig'
+    use 'wbthomason/lsp-status.nvim'
+    use 'nvim-lua/completion-nvim'
+    use 'euclidianAce/BetterLua.vim'
+    use 'j-hui/fidget.nvim'
+
     -- Harpoon
     use({ 'ThePrimeagen/harpoon' })
-
-    if packer_bootstrap then
-      require('packer').sync()
-    end
   end,
   config = {
     display = {

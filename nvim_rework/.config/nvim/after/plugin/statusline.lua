@@ -47,13 +47,28 @@ require("el").setup {
     return {
       { mode },
       { git_branch },
-      { git_changes },
       { " " },
+      { sections.split },
       { sections.split },
       { git_icon },
       { sections.maximum_width(builtin.make_responsive_file(140,90), 0.40) },
+      { sections.collapse_builtin { { " " }, { builtin.modified_flag }}},
       { sections.split },
-      { builtin.filetype }
+      { git_changes },
+      { "[" },
+      { builtin.line_with_width(3) },
+      { ":" },
+      { builtin.column_with_width(2) },
+      { "]" },
+      {
+        sections.collapse_builtin {
+          "[",
+          builtin.help_list,
+          builtin.readonly_list,
+          "]",
+        },
+      },
+      { builtin.filetype },
     }
   end,
 }

@@ -6,4 +6,4 @@ nnoremap <leader>pb :lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<cr>
 
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<cr>
-nnoremap <leader>pw :lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>")})<cr>
+nnoremap <silent><leader>pw :lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>")})<cr>

@@ -4,6 +4,21 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+if has('nvim')
+  tnoremap jk <c-\><c-n>
+  tnoremap <c-w>h <c-\><c-n><c-w>h
+  tnoremap <c-w>l <c-\><c-n><c-w>l
+  tnoremap <c-w>j <c-\><c-n><c-w>j
+  tnoremap <c-w>k <c-\><c-n><c-w>k
+  tnoremap <c-w>i <c-\><c-n>:tabnext<cr>
+  tnoremap <c-w>u <c-\><c-n>:tabprev<cr>
+endif
+
+nnoremap <silent><leader>tn :tabnext<cr>
+nnoremap <silent><leader>tp :tabprev<cr>
+nnoremap <c-w>i :tabnext<cr>
+nnoremap <c-w>u :tabprev<cr>
+
 " easyalign
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -17,6 +32,9 @@ nmap <leader>pv :Ex<cr>
 " ?
 vnoremap <leader>d "_d
 xnoremap <leader>p "_dP
+
+" Source nvim config
+nnoremap <leader><cr> :so ~/.config/nvim/init.lua<cr>
 
 " Primes must have remaps {{{
 " Number 5:

@@ -18,6 +18,7 @@ opt.linebreak    = true
 opt.laststatus   = 2
 opt.autowriteall = true
 opt.mouse        = "a"
+opt.signcolumn   = "yes"
 
 opt.scrolloff      = 7
 opt.showmatch      = false
