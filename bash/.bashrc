@@ -4,7 +4,7 @@
 
 xset r rate 180
 xset b off
-setxkbmap -option "shift:both_capslock"
+#setxkbmap -option "shift:both_capslock"
 
 # Prompt
 function ps1full { PS1='\[\e[1;37m\]\u@\h \w \[\033[00m\]' ; }
@@ -43,7 +43,7 @@ export PATH=$PATH:$HOME/opt/node/bin
 export PATH=$PATH:$path
 
 # Source external scripts and environments
-[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+#[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 # functions {{{
