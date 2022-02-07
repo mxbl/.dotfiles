@@ -27,6 +27,7 @@ bind 'set completion-ignore-case on'
 
 export HISTCONTROL=ingnoreboth:erasedups
 export EDITOR=vim
+export TERM=xterm-256color
 
 # Path
 path=$PATH
