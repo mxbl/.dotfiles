@@ -1,6 +1,9 @@
 function! s:small_terminal() abort
+
+  " Make a new window and move to the very bottom
   new
   wincmd J
+
   call nvim_win_set_height(0, 12)
   set winfixheight
   term /bin/bash

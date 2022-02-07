@@ -14,6 +14,9 @@ require "mx.globals"
 -- Lsp configuration
 require "mx.lsp"
 
+-- My lua tryout space
+require "mx.scratch"
+
 require('packer').startup({
   function(use)
     use({ 'lewis6991/impatient.nvim' })
@@ -27,6 +30,7 @@ require('packer').startup({
     use({ 'chase/vim-ansible-yaml' })
     use({ 'tpope/vim-fugitive' })
     use({ 'junegunn/gv.vim' })
+    use({ 'simeji/winresizer' })
 
     -- Colorschemes
     use({ 'gruvbox-community/gruvbox' })

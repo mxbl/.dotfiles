@@ -1,5 +1,5 @@
-" Shrug ¯\_(ツ)_/¯
-inoremap ,shrug ¯\_(ツ)_/¯
+" Save and source
+nnoremap <leader>w :call mx#save_and_exec()<cr>
 
 " Moving between splits
 map <c-j> <c-w>j
@@ -43,7 +43,30 @@ xnoremap <leader>p "_dP
 " Source nvim config
 nnoremap <leader><cr> :so ~/.config/nvim/init.lua<cr>
 
-" Primes must have remaps {{{
+" Comma bindings {{{
+" Shrug ¯\_(ツ)_/¯
+inoremap ,shrug ¯\_(ツ)_/¯
+
+" From autoload mx..
+nnoremap ,x :call mx#save_and_exec()<cr>
+
+" Resize windows (now with winresizer plugin -> ,t)
+nnoremap ,= <c-w>=
+
+" toggle vertical and horizontal split
+" ---
+" <c-w>K move current window to full-width at the top
+" <c-w>H move current window to full-height at far left
+" NOTE:
+"  - The current window goes to the top or left
+"  - h is horizontal aligned not horizontal split
+nnoremap ,v <c-w>K
+nnoremap ,h <c-w>H
+
+" Open vim command window with history
+nnoremap ,c q:
+" }}}
+" Primes must have 5 remaps {{{
 " Number 5:
 nnoremap Y y$
 
