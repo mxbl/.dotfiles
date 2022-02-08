@@ -22,6 +22,7 @@ opt.signcolumn   = "yes"
 
 opt.scrolloff      = 7
 opt.showmatch      = false
+opt.showmode       = false
 opt.relativenumber = true
 opt.number         = true
 opt.ignorecase     = true
