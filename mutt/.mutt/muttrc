@@ -1,5 +1,6 @@
 # IMAP
 set imap_user        = block@math.tu-berlin.de
+set spoolfile        = imaps://block@mail.math.tu-berlin.de/Inbox
 set header_cache     = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~.mutt/certificates"
@@ -11,7 +12,6 @@ set smtp_url = "smtp://block@mail.math.tu-berlin.de:587/"
 set editor       = "nvim"
 set edit_headers = yes
 set charset      = UTF-8
-send_charset
 
 set realname = "Maximilian Block"
 set from     = "max@pool.math.tu-berlin.de"
