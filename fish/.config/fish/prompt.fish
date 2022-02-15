@@ -2,11 +2,11 @@ function fish_prompt --description 'Write out the prompt'
   set laststatus $status
 
   function _git_branch_name
-    echo (git symbolic-ref HEAD | sed -e 's|^refs/heads/||')
+    echo (git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||')
   end
 
   function _is_git_dirty
-    echo (git status -s --ignore-submodules=dirty)
+    echo (git status -s --ignore-submodules=dirty 2>/dev/null)
   end
 
   if [ (_git_branch_name) ]
