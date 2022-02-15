@@ -8,8 +8,8 @@ function fish_prompt --description 'Write out the prompt'
   set -g git_branch (_git_branch_name)
 
   function _current_working_directory
-    if set -q git_branch
-      set -l git_dir (git rev-parse --show-toplevel)
+    if test -n "$git_branch"
+      set -l git_dir  (git rev-parse --show-toplevel)
       set -l this_dir (pwd)
 
       if [ $git_dir = $this_dir ]
@@ -24,25 +24,25 @@ function fish_prompt --description 'Write out the prompt'
   end
 
   function _is_git_dirty
-    if set -q git_branch
+    if test -n "$git_branch"
       echo (git status -s --ignore-submodules=dirty 2>/dev/null)
     end
   end
 
   function _git_commit_hash
-    if set -q git_branch
+    if test -n "$git_branch"
       echo (git log --pretty=format:'%h' -n 1)
     end
   end
 
   function _git_commit_message
-    if set -q git_branch
+    if test -n "$git_branch"
       set max_commit_length 25
       echo (git log -1 --pretty=%B | head -n1)
     end
   end
 
-  if set -q git_branch
+  if test -n "$git_branch"
     if [ (_is_git_dirty) ]
       for i in (git branch -qv --no-color | string match -r '\*' | cut -d' ' -f4- | cut -d] -f1 | tr , \n)\
         (git status --porcelain | cut -c 1-2 | uniq)
@@ -76,7 +76,7 @@ function fish_prompt --description 'Write out the prompt'
   printf '%s'        (set_color -o white)
   printf '%s:%s '    (whoami) (_current_working_directory)
   printf '%s '       $git_info
-  printf '%s: "%s" ' (_git_commit_hash) (_git_commit_message)
+  printf '%s %s '    (_git_commit_hash) (_git_commit_message)
   printf '%s'        (set_color normal)
 
   if test $laststatus -ne 0
