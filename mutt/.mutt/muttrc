@@ -1,18 +1,44 @@
 # IMAP
 set imap_user        = block@math.tu-berlin.de
+set spoolfile        = imaps://block@mail.math.tu-berlin.de/Inbox
 set header_cache     = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~.mutt/certificates"
+set imap_keepalive   = 300
+set timeout          = 60
+set mailcap_path=~/.mailcap
+
+#set use_threads  = yes
+set sort = threads
+set sort_aux = reverse-last-date-received
 
 # SMTP
-set smtp_url = "smtp://block@mail.math.tu-berlin.de:587/"
+set smtp_url = "smtp://mail.math.tu-berlin.de:587/"
 
 # Composition
 set editor       = "nvim"
 set edit_headers = yes
 set charset      = UTF-8
-send_charset
 
-set realname = "Maximilian Block"
+set realname = "Max"
 set from     = "max@pool.math.tu-berlin.de"
 set use_from = yes
+
+# bindings
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+bind pager j next-line
+bind pager k previous-line
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+bind pager d next-page
+bind pager u previous-page
+bind pager D delete-message
+bind pager U undelete-message
+bind index \CV collapse-thread
+
+# colors
+color status color144 color234
+color tree   color144 default
