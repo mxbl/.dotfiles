@@ -17,6 +17,9 @@ require "mx.lsp"
 -- My lua tryout space
 require "mx.scratch"
 
+-- POP for testing my popups
+POP = require "mx.scratch.mypopup"
+
 require('packer').startup({
   function(use)
     use({ 'lewis6991/impatient.nvim' })
@@ -73,7 +76,7 @@ require('packer').startup({
 vim.cmd([[
   augroup InitAutoCommands
     au!
-    au FileType vim,conf,sh,tmux,xdefaults setlocal foldmethod=marker
+    au FileType vim,lua,conf,sh,tmux,xdefaults setlocal foldmethod=marker
   augroup END
 ]])
 
