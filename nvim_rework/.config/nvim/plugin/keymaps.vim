@@ -5,10 +5,10 @@ nnoremap <leader>w :call mx#save_and_exec()<cr>
 nnoremap <silent><leader>h :lua require("mx.scratch.mypopup").which_key_like_func()<cr>
 
 " Moving between splits
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+map <silent><c-j> :lua require("mx.tmux").navigate("j")<cr>
+map <silent><c-k> :lua require("mx.tmux").navigate("k")<cr>
+map <silent><c-l> :lua require("mx.tmux").navigate("l")<cr>
+map <silent><c-h> :lua require("mx.tmux").navigate("h")<cr>
 
 if has('nvim')
   tnoremap jk <c-\><c-n>
