@@ -11,10 +11,11 @@ set -x PATH          \
     /usr/local/sbin  \
     /usr/bin         \
     /usr/sbin        \
+    /usr/games       \
     /bin             \
     /sbin
 
-# Fzf globals
+# Fzf globals, to change fzf behaviour
 set -x FZF_DEFAULT_OPTS "--height=10% --inline-info --cycle"
 set -x FZF_REVERSE_ISEARCH_OPTS "--layout=reverse"
 set -x FZF_FIND_AND_EXECUTE_OPTS "--layout=reverse --multi"
@@ -25,7 +26,15 @@ set -x FZF_FIND_AND_EXECUTE_OPTS "--layout=reverse --multi"
 . $FISHDIR/prompt.fish
 
 if string match -r "xterm|screen" $TERM > /dev/zero
+
+    # both shift together work as capslock
     setxkbmap -option "shift:both_capslock"
-    xset r rate 180
-    xset b off
+
+    if [ (hostname) = "mxdesk" ]
+      xmodmap -e "keycode 64  = Super_L" # reassign Alt_L to Super_L
+      xmodmap -e "remove mod1 = Super_L" # make sure X keeps it out of the mod1 group
+    end
+
+    xset r rate 180 # change keyboard repeat rate
+    xset b off      # turn off visual bell
 end
