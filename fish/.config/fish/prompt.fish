@@ -95,7 +95,7 @@ function fish_prompt --description 'Write out the prompt'
     printf "\n"
   end
 
-  printf "%s→%s " (set_color -o cyan) (set_color normal)
+  printf "%s❯%s " (set_color -o cyan) (set_color normal)
 
 end
 
