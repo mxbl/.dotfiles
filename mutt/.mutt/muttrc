@@ -1,5 +1,6 @@
 # IMAP
 set imap_user        = block@math.tu-berlin.de
+set imap_pass        = .Leonhard.Eins?
 set spoolfile        = imaps://block@mail.math.tu-berlin.de/Inbox
 set header_cache     = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
@@ -32,12 +33,14 @@ bind pager k previous-line
 bind pager g top
 bind pager G bottom
 bind attach,index g first-entry
-bind attach,index G last-entry
+bind attach G last-entry
 bind pager d next-page
 bind pager u previous-page
 bind pager D delete-message
 bind pager U undelete-message
 bind index \CV collapse-thread
+
+bind index G imap-fetch-mail
 
 # colors
 color status color144 color234
