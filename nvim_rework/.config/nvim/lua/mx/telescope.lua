@@ -76,6 +76,16 @@ _ = require("telescope").load_extension "notify"
 vim.api.nvim_set_keymap(
   "n", "<space>fe", ":Telescope file_browser<cr>", { noremap = true })
 
+-- TODO: figure that out!
+--function find_in_packer()
+--  require("telescope.builtin").find_files {
+--    cwd = "~/.local/share/nvim/site/pack/packer/start/",
+--  }
+--end
+--
+--vim.api.nvim_set_keymap(
+--  "n", "<space>pp", ":Telescope file_browser<cr>", { noremap = true })
+
 -- works but is in plugin/telescope.vim for now
 --vim.api.nvim_set_keymap(
 --"n", "<space>pg", ":lua require('telescope.builtin').git_files()<cr>", { noremap = true })

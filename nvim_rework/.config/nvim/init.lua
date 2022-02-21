@@ -17,15 +17,17 @@ require "mx.lsp"
 -- My lua tryout space
 require "mx.scratch"
 
+-- POP for testing my popups
+POP = require "mx.scratch.mypopup"
+
 require('packer').startup({
   function(use)
     use({ 'lewis6991/impatient.nvim' })
     use({ 'wbthomason/packer.nvim' })
     use({ 'tpope/vim-surround' })
     use({ 'junegunn/vim-easy-align' })
-    use({ 'christoomey/vim-tmux-navigator' })
     use({ 'SidOfc/mkdx' })
-    --use({ 'dag/vim-fish' })
+    use({ 'dag/vim-fish' })
     use({ 'rust-lang/rust.vim' })
     use({ 'chase/vim-ansible-yaml' })
     use({ 'tpope/vim-fugitive' })
@@ -74,7 +76,7 @@ require('packer').startup({
 vim.cmd([[
   augroup InitAutoCommands
     au!
-    au FileType vim,conf,sh,tmux,xdefaults setlocal foldmethod=marker
+    au FileType vim,lua,conf,sh,tmux,xdefaults setlocal foldmethod=marker
   augroup END
 ]])
 

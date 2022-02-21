@@ -73,6 +73,8 @@ _ = require('nlua.lsp.nvim').setup(lspconfig, {
 
     -- Custom
     "RELOAD",
+    "P",
+    "R",
   },
 })
 

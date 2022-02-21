@@ -1,11 +1,14 @@
 " Save and source
 nnoremap <leader>w :call mx#save_and_exec()<cr>
 
+" scratch pad stuff
+nnoremap <silent><leader>h :lua require("mx.scratch.mypopup").which_key_like_func()<cr>
+
 " Moving between splits
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+map <silent><c-j> :lua require("mx.tmux").navigate("j")<cr>
+map <silent><c-k> :lua require("mx.tmux").navigate("k")<cr>
+map <silent><c-l> :lua require("mx.tmux").navigate("l")<cr>
+map <silent><c-h> :lua require("mx.tmux").navigate("h")<cr>
 
 if has('nvim')
   tnoremap jk <c-\><c-n>
@@ -25,6 +28,10 @@ nnoremap <right> gt
 nnoremap <left>  gT
 nnoremap <c-w>i :tabnext<cr>
 nnoremap <c-w>u :tabprev<cr>
+nnoremap <c-w>N :tabnew<cr>
+nnoremap <leader>tn :tabnew<cr>
+nnoremap <leader>tu :tabprev<cr>
+nnoremap <leader>ti :tabnext<cr>
 
 " easyalign
 xmap ga <Plug>(EasyAlign)
@@ -44,7 +51,7 @@ xnoremap <leader>p "_dP
 nnoremap <leader><cr> :so ~/.config/nvim/init.lua<cr>
 
 " Comma bindings {{{
-" Shrug ¯\_(ツ)_/¯
+" Shrug ¯\_(ツ)_/¯, fucks with my ctrl-c mode switch after a comma
 "inoremap ,shrug ¯\_(ツ)_/¯
 
 " From autoload mx..
