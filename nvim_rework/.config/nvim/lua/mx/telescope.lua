@@ -69,6 +69,7 @@ require("telescope").setup({
 
 _ = require("telescope").load_extension "file_browser"
 _ = require("telescope").load_extension "ui-select"
+_ = require("telescope").load_extension "notify"
 
 -- Mappings
 

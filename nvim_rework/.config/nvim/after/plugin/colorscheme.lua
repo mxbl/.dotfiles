@@ -11,7 +11,6 @@ local Color, colors, Group, groups, styles = require('colorbuddy').setup()
 
 Color.new('darkgray0',  '#1c1c1c')
 Color.new('darkgray1',  '#3a3a3a')
-Color.new('somegreen0', '#5ea')
 Color.new('somegreen1', '#33ff00')
 Color.new('lightblue',  '#5eacd3')
 
@@ -45,6 +44,13 @@ Group.new('Error',    colors.red:light():light())
 
 -- Netrw
 Group.new('netrwDir', colors.lightblue)
+
+-- Notify
+Group.new('NotifyINFOBorder', colors.darkgray0)
+Group.new('NotifyINFOBody',   colors.gray)
+
+-- Bug: icon group highlights message body in minimal
+--Group.new('NotifyINFOIcon', colors.gray)
 
 --hi PMenu        guifg=#000000 guibg=#3a3a3a
 --hi PMenuSel     guifg=#000000 guibg=#d7005f

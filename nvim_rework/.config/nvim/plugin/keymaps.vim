@@ -45,7 +45,7 @@ nnoremap <leader><cr> :so ~/.config/nvim/init.lua<cr>
 
 " Comma bindings {{{
 " Shrug ¯\_(ツ)_/¯
-inoremap ,shrug ¯\_(ツ)_/¯
+"inoremap ,shrug ¯\_(ツ)_/¯
 
 " From autoload mx..
 nnoremap ,x :call mx#save_and_exec()<cr>
@@ -62,6 +62,8 @@ nnoremap ,= <c-w>=
 "  - h is horizontal aligned not horizontal split
 nnoremap ,v <c-w>K
 nnoremap ,h <c-w>H
+nnoremap ,\ <c-w>v
+nnoremap ,- <c-w>s
 
 " Open vim command window with history
 nnoremap ,c q:

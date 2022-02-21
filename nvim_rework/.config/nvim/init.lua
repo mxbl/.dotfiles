@@ -31,6 +31,7 @@ require('packer').startup({
     use({ 'tpope/vim-fugitive' })
     use({ 'junegunn/gv.vim' })
     use({ 'simeji/winresizer' })
+    use({ 'rcarriga/nvim-notify' })
 
     -- Colorschemes
     use({ 'gruvbox-community/gruvbox' })
