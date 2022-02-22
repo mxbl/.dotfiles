@@ -11,17 +11,22 @@ function fish_prompt --description 'Write out the prompt'
   # git directory we in
   function _current_working_directory
     if test -n "$git_branch"
-      set -l git_dir  (git rev-parse --show-toplevel)
       set -l this_dir (pwd)
 
-      if [ $git_dir = $this_dir ]
+      # equals "" in case of a bare repo
+      set -l git_dir (git rev-parse --show-toplevel)
+      if not test -n "$git_dir"
+        set git_dir (git rev-parse --git-dir)
+      end
+
+      if begin ; test $git_dir = $this_dir ; or test $git_dir = "." ; end
         echo (string split -r -m1 / $this_dir)[2]
       else
         set git_dir (string split -r -m1 / $git_dir)[1]
-        string replace $git_dir "" $this_dir
+        string sub -s2 (string replace $git_dir "" $this_dir)
       end
     else
-      echo (prompt_pwd)
+      prompt_pwd
     end
   end
 
@@ -50,44 +55,44 @@ function fish_prompt --description 'Write out the prompt'
         (git status --porcelain | cut -c 1-2 | uniq)
         switch $i
           case "*[ahead *"
-            set git_status "$git_status"(set_color red)⬆
+            set git_status "$git_status"(set_color ff3333)⬆
           case "*behind *"
-            set git_status "$git_status"(set_color red)⬇
+            set git_status "$git_status"(set_color ff3333)⬇
           case "."
-            set git_status "$git_status"(set_color green)✚
+            set git_status "$git_status"(set_color 32cd32)✚
           case " D"
-            set git_status "$git_status"(set_color red)✖
+            set git_status "$git_status"(set_color ff3333)✖
           case "*M*"
-            set git_status "$git_status"(set_color green)✱
+            set git_status "$git_status"(set_color 32cd32)✱
           case "*R*"
             set git_status "$git_status"(set_color purple)➜
           case "*U*"
             set git_status "$git_status"(set_color brown)═
           case "??"
-            set git_status "$git_status"(set_color red)≠
+            set git_status "$git_status"(set_color ff3333)≠
         end
       end
-    else
-      set git_status (set_color green):
+      #else
+      #  set git_status (set_color green):
     end
 
-    set git_info (set_color -o)"$git_status"(set_color normal)":$git_branch"(set_color normal)
+    set git_info (set_color -o)"$git_status"(set_color 444444)":"(set_color purple)"$git_branch"(set_color normal)
   end
 
-  set_color -b black
+  #set_color -b black
 
-  printf '%s'        (set_color -o white)
-  printf '%s '       (_current_working_directory)
-  printf '%s'        (set_color normal)
+  printf '\n'
+  printf '%s%s ' (set_color -o white)(_current_working_directory)
   if test -n "$git_branch"
-    printf '%s '       $git_info
-    printf '%s %s '    (_git_commit_hash) (_git_commit_message)
-    printf '%s'        (set_color normal)
+    printf '%s ' $git_info
+    printf '%s%s%s%s ' \
+      (set_color ff8800)(_git_commit_hash)(set_color 444444)(_git_commit_message)
   end
+
+  printf '%s' (set_color normal)
 
   if test $laststatus -ne 0
     printf "%s%s%s " (set_color -o red) "✘" (set_color normal)
-    #printf " %s%s " (set_color -o green) "✔"
   end
 
   # put the prompt on the next line if there is all the git information
@@ -96,7 +101,6 @@ function fish_prompt --description 'Write out the prompt'
   end
 
   printf "%s❯%s " (set_color -o cyan) (set_color normal)
-
 end
 
 function fish_right_prompt

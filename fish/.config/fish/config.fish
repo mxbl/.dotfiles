@@ -25,7 +25,7 @@ set -x FZF_FIND_AND_EXECUTE_OPTS "--layout=reverse --multi"
 . $FISHDIR/bindings.fish
 . $FISHDIR/prompt.fish
 
-if string match -r "xterm|screen" $TERM > /dev/zero
+if string match -r "xterm|screen" $TERM > /dev/zero and not set -q SSH_CLIENT
 
     # both shift together work as capslock
     setxkbmap -option "shift:both_capslock"
