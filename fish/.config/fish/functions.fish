@@ -13,11 +13,11 @@ with socketserver.TCPServer(("", PORT), HANDLER) as httpd:
     try:
         httpd.serve_forever()
     except:
-        pass # leave with Ctrl-C     
+        pass # leave with Ctrl-C
 '
 end
 
-# Fzf
+### / Fzf /
 
 function fs --description="Switch tmux sessions"
     tmux list-sessions -F "#{session_name}" | fzf | xargs tmux switch-client -t
@@ -66,4 +66,20 @@ function __fzf_reverse_isearch
   end
 
   commandline -f repaint
+end
+
+### / Experimental /
+
+# FIXME: do some checks of the last command, crashes the shell if the last
+#   command was for example `exec fish`
+function __stdout_of_last_command_to_nvim
+  eval $history[1] | nvim -
+end
+
+function __test_eval_commandline
+  set -l cmdl (commandline -b)
+  eval $cmdl | nvim -
+  commandline -r ""
+  #set -l outp (eval $cmdl)
+  #commandline -r $outp
 end

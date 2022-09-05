@@ -4,15 +4,20 @@ set -x EDITOR nvim
 set -x NVIM_LOG_FILE $HOME/.cache/nvim/log
 set -x FISHDIR $HOME/.config/fish
 set -x TERM xterm-256color
-set -x PATH          \
-    $HOME/.cargo/bin \
-    $HOME/bin        \
-    /usr/local/bin   \
-    /usr/local/sbin  \
-    /usr/bin         \
-    /usr/sbin        \
-    /usr/games       \
-    /bin             \
+set -x PATH            \
+    $HOME/.cargo/bin   \
+    $HOME/racket/bin   \
+    $HOME/.local/bin   \
+    $HOME/bin          \
+    $HOME/opt/node/bin \
+    /net/adm/bin       \
+    /extra2/max/riscv-gnu-toolchain/bin \
+    /usr/local/bin     \
+    /usr/local/sbin    \
+    /usr/bin           \
+    /usr/sbin          \
+    /usr/games         \
+    /bin               \
     /sbin
 
 # Fzf globals, to change fzf behaviour
@@ -25,15 +30,15 @@ set -x FZF_FIND_AND_EXECUTE_OPTS "--layout=reverse --multi"
 . $FISHDIR/bindings.fish
 . $FISHDIR/prompt.fish
 
-if string match -r "xterm|screen" $TERM > /dev/zero and not set -q SSH_CLIENT
+if string match -r "xterm|screen" $TERM > /dev/zero; and not set -q SSH_CLIENT
 
     # both shift together work as capslock
     setxkbmap -option "shift:both_capslock"
 
-    if [ (hostname) = "mxdesk" ]
-      xmodmap -e "keycode 64  = Super_L" # reassign Alt_L to Super_L
-      xmodmap -e "remove mod1 = Super_L" # make sure X keeps it out of the mod1 group
-    end
+    #if [ (hostname) = "mxdesk" ]
+    #  xmodmap -e "keycode 64  = Super_L" # reassign Alt_L to Super_L
+    #  xmodmap -e "remove mod1 = Super_L" # make sure X keeps it out of the mod1 group
+    #end
 
     xset r rate 180 # change keyboard repeat rate
     xset b off      # turn off visual bell
