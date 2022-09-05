@@ -7,9 +7,9 @@ opt.belloff = "all"
 opt.autoindent   = true
 opt.cindent      = true
 opt.wrap         = true
-opt.tabstop      = 2
-opt.softtabstop  = 2
-opt.shiftwidth   = 2
+opt.tabstop      = 4
+opt.softtabstop  = 4
+opt.shiftwidth   = 4
 opt.expandtab    = true
 opt.smartindent  = true
 opt.breakindent  = true
@@ -51,4 +51,8 @@ opt.listchars = { tab = "▸ ", eol = "¬", space = "·", trail = "~" }
 
 --opt.colorcolumn = {80}
 opt.cursorline = true
+
+opt.updatetime = 300
+opt.completeopt = "menuone,noinsert"
+opt.shortmess:append("c")
 

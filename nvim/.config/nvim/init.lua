@@ -22,8 +22,8 @@ POP = require "mx.scratch.mypopup"
 
 require('packer').startup({
   function(use)
-    use({ 'lewis6991/impatient.nvim' })
     use({ 'wbthomason/packer.nvim' })
+    use({ 'lewis6991/impatient.nvim' })
     use({ 'tpope/vim-surround' })
     use({ 'junegunn/vim-easy-align' })
     use({ 'SidOfc/mkdx' })
@@ -55,13 +55,19 @@ require('packer').startup({
     -- Statusline
     use({ 'tjdevries/express_line.nvim' })
 
-    -- LSP
+    -- LSP / Lua
     use 'tjdevries/nlua.nvim'
-    use 'neovim/nvim-lspconfig'
-    use 'wbthomason/lsp-status.nvim'
-    use 'nvim-lua/completion-nvim'
     use 'euclidianAce/BetterLua.vim'
-    use 'j-hui/fidget.nvim'
+
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+    use 'nvim-lua/lsp-status.nvim'
+    use 'nvim-lua/completion-nvim'
+
+    -- ???
+    --use 'j-hui/fidget.nvim'
+    use 'airblade/vim-gitgutter'
+    use 'sbdchd/neoformat'
 
     -- Harpoon
     use({ 'ThePrimeagen/harpoon' })

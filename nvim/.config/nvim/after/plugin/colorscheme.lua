@@ -32,7 +32,7 @@ Group.new('SignColumn', nil, nil, nil)
 
 -- Telescope
 Group.new('TelescopeTitle',  colors.lightblue, nil, nil)
-Group.new('TelescopeBorder', colors.darkgray0, nil, nil)
+Group.new('TelescopeBorder', colors.green, nil, nil)
 
 -- Statusline
 Group.new('StatuslineError1', colors.red:light():light(), groups.Statusline)
@@ -48,6 +48,11 @@ Group.new('netrwDir', colors.lightblue)
 -- Notify
 Group.new('NotifyINFOBorder', colors.darkgray0)
 Group.new('NotifyINFOBody',   colors.gray)
+
+-- Gitgutter
+Group.new('GitGutterAdd',    colors.darkgreen, nil, nil)
+Group.new('GitGutterChange', colors.darkyellow, nil, nil)
+Group.new('GitGutterDelete', colors.darkred, nil, nil)
 
 -- Bug: icon group highlights message body in minimal
 --Group.new('NotifyINFOIcon', colors.gray)
