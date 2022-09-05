@@ -8,7 +8,7 @@ xset b off
 
 # Prompt
 function ps1full { PS1='\[\e[1;37m\]\u@\h \w \[\033[00m\]' ; }
-function ps1clean { PS1='\[\e[1;37m\]> \[\033[00m\]' ; }
+function ps1clean { PS1='\[\e[1;37m\]\u@\h ❯ \[\033[00m\]' ; }
 ps1full
 
 # Aliases
