@@ -8,10 +8,12 @@ set -x PATH            \
     $HOME/.cargo/bin   \
     $HOME/racket/bin   \
     $HOME/.local/bin   \
+    $HOME/go/bin       \
     $HOME/bin          \
     $HOME/opt/node/bin \
     /net/adm/bin       \
     /extra2/max/riscv-gnu-toolchain/bin \
+    /usr/local/go/bin  \
     /usr/local/bin     \
     /usr/local/sbin    \
     /usr/bin           \
