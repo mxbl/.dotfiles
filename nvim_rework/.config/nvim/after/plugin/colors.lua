@@ -36,8 +36,9 @@ Group.new("TelescopeBorder", colors.lightblue, nil, nil)
 Group.new("TelescopeTitle", colors.lightblue, nil, nil)
 
 -- Treesitter
-Group.new("TSKeywordReturn", colors.lime, nil, nil)
-Group.new("TSKeyword", colors.lime, nil, nil)
+Group.new("Keyword", colors.lime, nil, nil)
+--Group.new("TSKeywordReturn", colors.lime, nil, nil)
+--Group.new("TSKeyword", colors.lime, nil, nil)
 
 -- Gitgutter
 Group.new('GitGutterAdd', colors.darkgreen, nil, nil)
@@ -46,8 +47,4 @@ Group.new('GitGutterDelete', colors.darkred, nil, nil)
 
 Group.new('DiagnosticVirtualTextError', colors.red:light(), nil, nil)
 --vim.api.nvim_command('hi link DiagnosticVirtualTextError DiagnosticError')
-
--- Neogit
-Group.new('NeogitDiffAddHighlight', colors.red:light(), colors.darkgray2, nil)
-Group.new('NeogitDiffAddRegion', colors.red:light(), colors.darkgray2, nil)
 
