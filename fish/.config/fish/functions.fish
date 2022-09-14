@@ -68,6 +68,18 @@ function __fzf_reverse_isearch
   commandline -f repaint
 end
 
+function __fzf_z
+    cat $__zdata | \
+        eval "__fzfcmd $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS" | \
+        read -z select
+
+    if not test -z $select
+        cd (builtin string trim "$select")
+    end
+end
+
+alias z __fzf_z
+
 ### / Experimental /
 
 # FIXME: do some checks of the last command, crashes the shell if the last
