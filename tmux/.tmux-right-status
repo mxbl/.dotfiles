@@ -8,11 +8,14 @@ SMALL=80
 MEDIUM=120
 
 # Colors
+RED="#[fg=colour160]"
 PURPLE="#[fg=colour141]"
 NORMAL="#[fg=#888888]"
 
 if [ "$WIDTH" -gt "$MEDIUM" ]
 then
+  # messages
+  echo -n ":${RED}$(tail -n1 .tmux-message)${NORMAL}"
   # client pid
   echo -n ":$PURPLE#{client_pid}$NORMAL"
   # socket path

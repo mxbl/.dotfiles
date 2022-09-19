@@ -52,12 +52,6 @@ font:
     x: 0
     y: 0
 
-  # Thin stroke font rendering (OS X only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`
-  use_thin_strokes: true
-
 # Display the time it takes to redraw each frame.
 render_timer: false
 
@@ -73,6 +67,7 @@ colors:
     foreground: '0xd8d8d8'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
+  # Style: Beam, Underline, Block
   cursor:
     text:   '0x2b2c2b'
     cursor: '0xff0099'
