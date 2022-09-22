@@ -69,12 +69,14 @@ function __fzf_reverse_isearch
 end
 
 function __fzf_z
-    cat $__zdata | \
-        eval "__fzfcmd $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS" | \
+    sort -r $__zdata | \
+        eval "__fzfcmd --exact --no-sort \
+        $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS" | \
         read -z select
 
     if not test -z $select
-        cd (builtin string trim "$select")
+        set wp (string split " " "$select") 
+        cd (builtin string trim "$wp[2]")
     end
 end
 
@@ -94,4 +96,23 @@ function __test_eval_commandline
   commandline -r ""
   #set -l outp (eval $cmdl)
   #commandline -r $outp
+end
+
+function dots
+    cd $DOTFILES
+end
+
+function wally
+    feh --bg-center (find ~/Pictures/wallpaper/ -type f | fzf)
+end
+
+function fish_command_not_found
+    grep -i $argv[1] $__zdata &>/dev/zero && sort -r $__zdata | \
+        eval "__fzfcmd --exact --no-sort $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS \
+        -q $argv[1]" | read -z select
+
+    if not test -z $select
+        set wp (string split " " "$select") 
+        cd (builtin string trim "$wp[2]")
+    end
 end
