@@ -7,3 +7,5 @@ map <silent><c-h> :lua require("mx.tmux").navigate("h")<cr>
 " quickfix list
 nnoremap <c-n> :cnext<cr>
 nnoremap <c-p> :cprev<cr>
+
+xmap ga <Plug>(EasyAlign)

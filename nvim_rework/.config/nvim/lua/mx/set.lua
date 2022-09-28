@@ -4,6 +4,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 vim.opt.errorbells = false
+vim.opt.showcmd = false
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -19,7 +20,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
@@ -38,13 +39,21 @@ vim.opt.shortmess:append("c")
 
 vim.opt.colorcolumn = "80"
 
-vim.opt.laststatus = 1
+vim.opt.laststatus = 2
 vim.opt.mouse = "a"
 vim.opt.autowriteall = true
 
 vim.opt.ruler = false
 vim.opt.fillchars = { vert = "│", eob = "~" }
 vim.opt.list = true
-vim.opt.listchars = { tab = "▸ ", eol = "¬", space = "·", trail = "~" }
+vim.opt.listchars = { tab = "│ ", eol = "¬", space = "·", trail = "~" }
+-- tab: "▸ "
 
 vim.g.mapleader = " "
+
+vim.cmd([[
+    augroup InitAutoCommands
+        au!
+        au FileType conf,sh,tmux,xdefaults setlocal foldmethod=marker
+    augroup END
+]])

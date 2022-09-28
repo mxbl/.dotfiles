@@ -54,3 +54,15 @@ require("telescope").setup({
     git_files  = no_preview('Git Files'),
   },
 })
+
+local M = {}
+
+M.search_dotfiles = function()
+    require("telescope.builtin").find_files({
+        prompt_title = "< Dots >",
+        cwd = vim.env.DOTFILES,
+        hidden = true,
+    })
+end
+
+return M
