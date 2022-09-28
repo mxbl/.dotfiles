@@ -5,11 +5,24 @@ return require("packer").startup(function()
     use("nvim-lua/popup.nvim")
     use("nvim-telescope/telescope.nvim")
 
+    --[[
+    -- Doesn't work ?? use Telescope oldfiles
+    use {
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+            require"telescope".load_extension("frecency")
+        end,
+        requires = { "kkharji/sqlite.lua" }
+    }
+    --]]
+
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
+    use("romgrk/nvim-treesitter-context")
 
     use("tpope/vim-surround")
+    use("junegunn/vim-easy-align")
     use("chase/vim-ansible-yaml")
     use("airblade/vim-gitgutter")
     use("TimUntersberger/neogit")
@@ -20,6 +33,9 @@ return require("packer").startup(function()
 
     use("ThePrimeagen/harpoon")
 
+    -- Statusline
+    use("tjdevries/express_line.nvim")
+
     -- Lsp and completion
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
@@ -29,6 +45,11 @@ return require("packer").startup(function()
     use("onsails/lspkind-nvim")
     use("L3MON4D3/LuaSnip")
     use("saadparwaiz1/cmp_luasnip")
+    use("simrat39/rust-tools.nvim")
+    use("wbthomason/lsp-status.nvim")
+    use("nvim-lua/lsp_extensions.nvim")
+    use("j-hui/fidget.nvim")
 
     use("fatih/vim-go")
+    use('dag/vim-fish')
 end)

@@ -1,6 +1,10 @@
 local nnoremap = require("mx.keymap").nnoremap
+local vnoremap = require("mx.keymap").vnoremap
 
--- What does that do?
-nnoremap("<leader>f", function()
-    vim.lsp.buf.format()
+-- FIXME:
+vnoremap("F", function()
+    require("mx.lsp.rust.formating").range_formatting()
 end)
+
+nnoremap("<leader>pv", ":Ex<CR>")
+
