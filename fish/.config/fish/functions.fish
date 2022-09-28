@@ -102,7 +102,7 @@ function dots
     cd $DOTFILES
 end
 
-function wally
+function wp
     feh --bg-center (find ~/Pictures/wallpaper/ -type f | fzf)
 end
 
@@ -114,5 +114,15 @@ function fish_command_not_found
     if not test -z $select
         set wp (string split " " "$select") 
         cd (builtin string trim "$wp[2]")
+    end
+end
+
+# Sync some folders with the current machine and my laptop if in the same network
+function mxlap_sync
+    set -l host (hostname)
+    set -l avail (ping mxlap -c1 &>/dev/zero; echo $status)
+    if test $avail -eq 0; and test $host != "mxlap"
+        # TODO: do the syncing
+        printf "sync.."
     end
 end

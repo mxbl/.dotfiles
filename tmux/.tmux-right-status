@@ -15,7 +15,9 @@ NORMAL="#[fg=#888888]"
 if [ "$WIDTH" -gt "$MEDIUM" ]
 then
   # messages
-  echo -n ":${RED}$(tail -n1 .tmux-message)${NORMAL}"
+  #echo -n ":${RED}$(tail -n1 .tmux-message)${NORMAL}"
+  # battery information
+  echo -n ":$(battery_info)"
   # client pid
   echo -n ":$PURPLE#{client_pid}$NORMAL"
   # socket path
