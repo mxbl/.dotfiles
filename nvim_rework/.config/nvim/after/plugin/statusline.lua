@@ -39,12 +39,12 @@ function(window, buffer)
 end
 )
 
-local show_current_function = function(window, buffer)
-    if buffer.filetype == "lua" then
-        return ""
-    end
-    return lsp_statusline.current_function(window, buffer)
-end
+-- local show_current_function = function(window, buffer)
+--     if buffer.filetype == "lua" then
+--         return ""
+--     end
+--     return lsp_statusline.current_function(window, buffer)
+-- end
 
 local lsp_status_info = function(window, buffer)
     if buffer.filetype == "lua" then
@@ -67,7 +67,7 @@ require("el").setup {
             { git_icon },
             { sections.maximum_width(builtin.make_responsive_file(140,90), 0.40) },
             { sections.collapse_builtin { { " " }, { builtin.modified_flag }}},
-            { show_current_function },
+            -- Fidget has taken over
             --{ lsp_statusline.server_progress },
             { sections.split },
             { git_changes },

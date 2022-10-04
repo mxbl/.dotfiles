@@ -1,4 +1,5 @@
 local previewers = require("telescope.previewers")
+local action_layout = require("telescope.actions.layout")
 
 local no_preview = function(title)
   return require('telescope.themes').get_dropdown({
@@ -35,6 +36,7 @@ require("telescope").setup({
       i = {
         ["<C-j>"] = "move_selection_next",
         ["<C-k>"] = "move_selection_previous",
+        ["<C-p>"] = action_layout.toggle_preview,
         ["<C-h>"] = "which_key",
       }
     },

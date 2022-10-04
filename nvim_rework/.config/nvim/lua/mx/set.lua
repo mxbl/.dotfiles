@@ -37,7 +37,7 @@ vim.opt.updatetime = 50
 -- Don't pass messages to |ins-completion-menu|
 vim.opt.shortmess:append("c")
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = ""
 
 vim.opt.laststatus = 2
 vim.opt.mouse = "a"
@@ -46,8 +46,14 @@ vim.opt.autowriteall = true
 vim.opt.ruler = false
 vim.opt.fillchars = { vert = "│", eob = "~" }
 vim.opt.list = true
-vim.opt.listchars = { tab = "│ ", eol = "¬", space = "·", trail = "~" }
--- tab: "▸ "
+vim.opt.listchars = {
+    tab   = "» ",
+    eol   = "↲",
+    space  = "·",
+    trail = "~"
+}
+-- tab: "▸ ", eol = "¬"
+-- lead  = "·", only leading spaces
 
 vim.g.mapleader = " "
 
@@ -57,3 +63,7 @@ vim.cmd([[
         au FileType conf,sh,tmux,xdefaults setlocal foldmethod=marker
     augroup END
 ]])
+
+--vim.g.rust_conceal = 0
+vim.o.conceallevel = 2
+vim.o.concealcursor = "nvc"
