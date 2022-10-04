@@ -117,12 +117,20 @@ function fish_command_not_found
     end
 end
 
+set __sync_paths "/home/__USER__/Documents/" \
+                 "/home/__USER__/Pictures/"
+
 # Sync some folders with the current machine and my laptop if in the same network
 function mxlap_sync
     set -l host (hostname)
     set -l avail (ping mxlap -c1 &>/dev/zero; echo $status)
     if test $avail -eq 0; and test $host != "mxlap"
-        # TODO: do the syncing
-        printf "sync.."
+        for path in $__sync_paths
+            set -l local_path (string replace __USER__ $USER $path)
+            set -l remote_path (string replace __USER__ "mx" $path)
+            printf "Syncing mxlap:%s -> %s ..\n" $remote_path $local_path
+
+            rsync --progress -av mxlap:$remote_path $local_path
+        end
     end
 end

@@ -12,6 +12,7 @@ set -x PATH            \
     $HOME/go/bin       \
     $HOME/bin          \
     $HOME/opt/node/bin \
+    $HOME/.nix-profile/bin \
     /net/adm/bin       \
     /extra2/max/riscv-gnu-toolchain/bin \
     /usr/local/go/bin  \
@@ -48,3 +49,6 @@ if string match -r "xterm|screen" $TERM > /dev/zero; and not set -q SSH_CLIENT
     xset r rate 180 # change keyboard repeat rate
     xset b off      # turn off visual bell
 end
+
+# apt install direnv
+direnv hook fish | source
