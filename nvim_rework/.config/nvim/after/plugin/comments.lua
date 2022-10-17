@@ -13,8 +13,4 @@ usage in normal mode:
 ]]
 
 
-require('Comment').setup {
-    mappings = {
-        extended = true,
-    }
-}
+require('Comment').setup {}
