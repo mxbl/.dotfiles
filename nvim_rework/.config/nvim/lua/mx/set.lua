@@ -66,4 +66,4 @@ vim.cmd([[
 
 --vim.g.rust_conceal = 0
 vim.o.conceallevel = 2
-vim.o.concealcursor = "nvc"
+vim.o.concealcursor = ""
