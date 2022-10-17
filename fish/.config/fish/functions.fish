@@ -134,3 +134,14 @@ function mxlap_sync
         end
     end
 end
+
+# Use the current commandline or pull the last command from history and prefix
+# it with sudo
+function __sudo_last_command
+    set -l cmdl (commandline -b)
+    if test $cmdl != ""
+        commandline -r "sudo $cmdl"
+    else
+        commandline -r "sudo $history[1]"
+    end
+end

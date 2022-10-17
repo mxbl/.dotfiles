@@ -13,6 +13,7 @@ set -x PATH            \
     $HOME/bin          \
     $HOME/opt/node/bin \
     $HOME/.nix-profile/bin \
+    /nix/var/nix/profiles/default/bin \
     /net/adm/bin       \
     /extra2/max/riscv-gnu-toolchain/bin \
     /usr/local/go/bin  \
@@ -52,3 +53,8 @@ end
 
 # apt install direnv
 direnv hook fish | source
+
+if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+end
+

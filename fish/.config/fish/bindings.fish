@@ -13,6 +13,7 @@ function fish_user_key_bindings
     # experimental
     bind -M insert \cv __stdout_of_last_command_to_nvim
     bind -M insert \cx __test_eval_commandline
+    bind -M insert \cs __sudo_last_command
 end
 
 set fish_key_bindings fish_user_key_bindings
