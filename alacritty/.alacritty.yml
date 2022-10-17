@@ -44,7 +44,7 @@ font:
   italic:
     family: JetBrains Mono
     style: Italic
-  size: 12
+  size: 11
   offset:
     x: 0
     y: 0
@@ -58,11 +58,10 @@ render_timer: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Base16 Seti UI 256 - alacritty color config
-# 
 colors:
   primary:
-    background: '0x000000'
+    background: '0x20232A'
+    #background: '0x000000'
     #foreground: '0xd8d8d8'
 
 # Visual Bell

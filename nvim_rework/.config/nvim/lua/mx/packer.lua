@@ -58,5 +58,6 @@ return require("packer").startup {
 
         use("fatih/vim-go")
         use('dag/vim-fish')
+        use('LnL7/vim-nix')
     end
 }
