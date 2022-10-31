@@ -56,4 +56,30 @@ inoremap <silent> <Tab> <cmd>lua require'luasnip'.jump(1)<cr>
 snoremap <silent> <Tab> <cmd>lua require'luasnip'.jump(1)<cr>
 snoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<cr>
 
+" Marks, make local marks work globally
+" TODO: remove some of those again, is don't use that many marks
+nnoremap ma mA
+nnoremap ms mS
+nnoremap md mD
+nnoremap mf mF
+nnoremap mh mH
+nnoremap mq mQ
+nnoremap mw mW
+nnoremap me mE
+nnoremap mr mR
+nnoremap mt mT
+nnoremap 'a 'A
+nnoremap 's 'S
+nnoremap 'd 'D
+nnoremap 'f 'F
+nnoremap 'h 'H
+nnoremap 'q 'Q
+nnoremap 'w 'W
+nnoremap 'e 'E
+nnoremap 'r 'R
+nnoremap 't 'T
+
+" Clears hlsearch after doing a search, otherwise just does normal <CR> stuff
+nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
+
 " vim: fdm=marker

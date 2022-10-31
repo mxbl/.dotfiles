@@ -10,7 +10,7 @@ local opts = {
     max_len_align = false,
     right_align = false,
     right_align_padding = 7,
-    highlight = "NonText",
+    highlight = "Comment",
 }
 
 function M.new()
