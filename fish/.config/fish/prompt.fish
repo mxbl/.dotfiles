@@ -96,7 +96,11 @@ end
 function fish_prompt --description 'Write out the prompt'
   set laststatus $status
 
-  printf '\n'
+  if [ (git_branch_name) ]
+      printf '\n'
+  else
+      printf '%s%s: ' (set_color -o ff8800)(hostname)
+  end
 
   # current working directory
   printf '%s%s ' (set_color -o white)(current_working_directory)
