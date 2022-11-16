@@ -84,7 +84,12 @@ M.clientkeys = function(modkey)
 
         awful.key({modkey}, "t",
             function(c)
-                c.ontop = not c.ontop
+                --c.ontop = not c.ontop
+                if awful.layout.getname() == "tile" then
+                    awful.layout.set(awful.layout.suit.tile.left)
+                else
+                    awful.layout.set(awful.layout.suit.tile)
+                end
             end,
             {description = "toggle keep on top", group = "client"}
         ),
@@ -100,8 +105,13 @@ M.clientkeys = function(modkey)
 
         awful.key({modkey}, "m",
             function(c)
-                c.maximized = not c.maximized
-                c:raise()
+                --c.maximized = not c.maximized
+                --c:raise()
+                if awful.layout.getname() == "max" then
+                    awful.layout.set(awful.layout.suit.tile)
+                else
+                    awful.layout.set(awful.layout.suit.max)
+                end
             end,
             {description = "(un)maximize", group = "client"}
         ),
