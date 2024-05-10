@@ -1,4 +1,5 @@
 #alias ll       'ls -lh'
+alias l        'eza'
 alias ll       'l -lghB --git'
 alias la       'l -lghBa --git'
 alias lg       'l -lG'
