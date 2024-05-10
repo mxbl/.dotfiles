@@ -35,7 +35,7 @@ set -x FZF_FIND_AND_EXECUTE_OPTS "--layout=reverse --multi"
 . $FISHDIR/bindings.fish
 . $FISHDIR/prompt.fish
 #. $FISHDIR/z.fish
-. $FISHDIR/scratchpad.fish
+#. $FISHDIR/scratchpad.fish
 
 if string match -r "xterm|screen" $TERM > /dev/zero; and not set -q SSH_CLIENT
 
