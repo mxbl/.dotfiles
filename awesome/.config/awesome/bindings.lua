@@ -42,8 +42,8 @@ M.globalkeys = function(modkey)
 
         awful.key({modkey, "Shift"}, "q", awesome.quit,
             {description = "quit awesome", group = "awesome"}),
-        awful.key({modkey}, "space", function() awful.layout.inc(1) end,
-            {description = "select next", group = "layout"})
+
+        awful.key({modkey}, "space", function() mykeyboardlayout.next_layout(); end)
     )
 end
 
@@ -75,7 +75,7 @@ M.clientkeys = function(modkey)
             {description = "move to master", group = "client"}
         ),
 
-        awful.key({modkey}, "o",
+        awful.key({modkey, "Shift"}, ",",
             function(c)
                 c:move_to_screen()
             end,
