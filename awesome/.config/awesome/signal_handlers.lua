@@ -55,7 +55,7 @@ for s = 1, screen.count() do screen[s]:connect_signal("arrange",
                     c.border_width = 0
                 elseif #clients == 1 or layout == "max" then
                     c.border_width = 0
-                elseif awful.client.floating.get(c) or layout == "floating" then
+                elseif c.floating or layout == "floating" then
                     c.border_width = beautiful.border_width
                 else
                     c.border_width = beautiful.border_width

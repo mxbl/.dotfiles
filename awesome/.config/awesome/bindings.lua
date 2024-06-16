@@ -63,7 +63,7 @@ M.clientkeys = function(modkey)
             {description = "close", group = "client"}
         ),
 
-        awful.key({modkey, "Control"}, "space",
+        awful.key({modkey, "Shift"}, "f",
             awful.client.floating.toggle,
             {description = "toggle floating", group = "client"}
         ),

@@ -414,3 +414,7 @@ awful.rules.rules = {
     --   properties = { screen = 1, tag = "2" } },
 }
 -- }}}
+
+awful.spawn('nm-applet')
+awful.spawn('picom -b')
+awful.spawn('setxkbmap -layout "us,de"')
