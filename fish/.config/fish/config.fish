@@ -47,7 +47,7 @@ if string match -r "xterm|screen" $TERM > /dev/zero; and not set -q SSH_CLIENT
     #  xmodmap -e "remove mod1 = Super_L" # make sure X keeps it out of the mod1 group
     #end
 
-    xset r rate 180 # change keyboard repeat rate
+    xset r rate 200 # change keyboard repeat rate
     xset b off      # turn off visual bell
 end
 

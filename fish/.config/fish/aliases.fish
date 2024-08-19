@@ -17,3 +17,7 @@ alias fztp     'fzf-tmux --reverse --preview \'cat {}\''
 
 # set tmux colors
 alias color_rosa 'tmux select-pane -P \'bg=#630734\''
+
+alias cdl 'cd; clear'
+alias ip 'ip --color'
+alias bat 'batcat --theme base16 -p'
