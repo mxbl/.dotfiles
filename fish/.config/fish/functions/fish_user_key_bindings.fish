@@ -22,4 +22,7 @@
 #     bind -M insert \e\[1\;5D __execute_in_left_tmux_pane
 # end
 
-set fish_key_bindings fish_default_key_bindings
+bind \cy accept-autosuggestion
+
+# set fish_key_bindings fish_default_key_bindings
+

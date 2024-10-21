@@ -32,7 +32,7 @@ set -x FZF_FIND_AND_EXECUTE_OPTS "--layout=reverse --multi"
 
 . $FISHDIR/functions.fish
 . $FISHDIR/aliases.fish
-. $FISHDIR/bindings.fish
+#. $FISHDIR/bindings.fish
 . $FISHDIR/prompt.fish
 #. $FISHDIR/z.fish
 #. $FISHDIR/scratchpad.fish
