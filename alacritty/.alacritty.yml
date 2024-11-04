@@ -60,7 +60,7 @@ draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: '0x20232A'
+    background: '0x111111'
     #background: '0x000000'
     #foreground: '0xd8d8d8'
 
