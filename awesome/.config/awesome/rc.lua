@@ -52,6 +52,7 @@ Keyboardlayout = awful.widget.keyboardlayout()
 awful.screen.connect_for_each_screen(function(s)
 	awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 	s.mywibox = awful.wibar({ position = "top", screen = s })
+	s.mypromptbox = awful.widget.prompt({ fg = beautiful.fg_focus })
 	s.mywibox:setup({
 		layout = wibox.layout.align.horizontal,
 		{
@@ -64,6 +65,7 @@ awful.screen.connect_for_each_screen(function(s)
 			wibox.widget.systray(),
 			Keyboardlayout,
 			wibox.widget.textclock(),
+			s.mypromptbox,
 		},
 	})
 end)
@@ -89,7 +91,19 @@ for i = 1, 9 do
 					client.focus:move_to_tag(tag)
 				end
 			end
-		end, { description = "move focused client to tag #" .. i, group = "tag" })
+		end, { description = "move focused client to tag #" .. i, group = "tag" }),
+
+		awful.key({ Mod, "Control" }, "#" .. i + 9, function()
+			local t = client.focus.screen.tags[i]
+			awful.prompt.run({
+				prompt = "Rename tag: ",
+				text = t.name,
+				textbox = awful.screen.focused().mypromptbox.widget,
+				exe_callback = function(s)
+					t.name = s
+				end,
+			})
+		end, { description = "Rename tag #" .. i, group = "tag" })
 	)
 end
 
