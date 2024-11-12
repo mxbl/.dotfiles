@@ -6,6 +6,13 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 
+local separator = wibox.widget.textbox("   ")
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
+local color = {
+	white = "#a9b1d6",
+}
+
 require("signal_handlers")
 
 -- Error handling
@@ -51,21 +58,42 @@ awful.layout.layouts = {
 Keyboardlayout = awful.widget.keyboardlayout()
 awful.screen.connect_for_each_screen(function(s)
 	awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-	s.mywibox = awful.wibar({ position = "top", screen = s })
+	s.mywibox = awful.wibar({
+		position = "top",
+		screen = s,
+		margins = { top = dpi(0), left = dpi(0), right = dpi(0), bottom = 0 },
+	})
 	s.mypromptbox = awful.widget.prompt({ fg = beautiful.fg_focus })
 	s.mywibox:setup({
 		layout = wibox.layout.align.horizontal,
 		{
 			layout = wibox.layout.fixed.horizontal,
+			awful.widget.layoutbox(s),
+			separator,
 			awful.widget.taglist({
 				screen = s,
 				filter = awful.widget.taglist.filter.noempty,
+				style = {
+					shape = function(cr, width, height)
+						gears.shape.rounded_rect(cr, width, height, 3)
+					end,
+				},
+				layout = {
+					spacing = 10,
+					layout = wibox.layout.fixed.horizontal,
+				},
 			}),
-			awful.widget.layoutbox(s),
+			separator,
 			wibox.widget.systray(),
-			Keyboardlayout,
-			wibox.widget.textclock(),
+			separator,
+			wibox.widget.textclock('<span color="' .. color.white .. '"> %a %b %d, %H:%M </span>', 10),
+			separator,
 			s.mypromptbox,
+		},
+		{
+			-- layout = awful.widget.layout.horizontal.rightleft,
+			layout = wibox.layout.fixed.horizontal,
+			Keyboardlayout,
 		},
 	})
 end)
