@@ -27,7 +27,8 @@ then
 elif [ "$WIDTH" -gt "$SMALL" ]
 then
   # pane current path
-  echo -n "#{pane_id}#[fg=colour116,bold]#{pane_current_path}"
+  #echo -n "#{pane_id}#[fg=colour116,bold]#{pane_current_path}"
+  echo -n "$(battery_info):#{pane_id}"
 fi
 
 # return nothing if the client window is below `SMALL` columns
