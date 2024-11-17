@@ -12,10 +12,7 @@ echo -n ".tmux-vim-select-pane cmd=$cmd" >> /tmp/test.log
 if [[ "$cmd" == *"vi"* ]]; then
   direction="$(echo "${1#-}" | tr 'lLDUR' '\\hjkl')"
   echo -n ",direction=$direction" >> /tmp/test.log
-  # forward the keystroke to Vim
-  tmux send-keys "C-$direction"
+  tmux send-keys "C-$direction" # forward keystroke to vim
 else
   tmux select-pane "$@"
 fi
-
-echo "" >> /tmp/test.log

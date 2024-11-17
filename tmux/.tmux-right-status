@@ -15,15 +15,14 @@ NORMAL="#[fg=#888888]"
 if [ "$WIDTH" -gt "$MEDIUM" ]
 then
   # messages
-  echo -n ":${RED}$(tail -n1 .tmux-message)${NORMAL}"
-  # battery information
-  echo -n ":$(battery_info)"
-  # client pid
-  echo -n ":$PURPLE#{client_pid}$NORMAL"
-  # socket path
-  echo -n ":#{socket_path}:"
+  #echo -n "#[fg=#87ff00,bold]$(date +"KW %U %c") $(tail -n1 .tmux-message)${NORMAL}"
+  echo -n "#[fg=#87ff00,bold]$(tail -n1 .tmux-message)${NORMAL}"
+
+  echo -n "#[fg=colour147]:$(battery_info)"
+  echo -n "$PURPLE:#{client_pid}:$NORMAL#{socket_path}:"
+
   # pane current path
-  echo -n "#{pane_id}#[fg=colour116,bold]#{pane_current_path}"
+  echo -n "#{pane_id}:#[fg=#87ff00,bold]#{pane_current_path}"
 elif [ "$WIDTH" -gt "$SMALL" ]
 then
   # pane current path
