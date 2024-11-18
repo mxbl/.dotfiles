@@ -35,7 +35,7 @@ M.globalkeys = function(modkey)
 		awful.key({ modkey, "Shift" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 
 		awful.key({ modkey }, "p", function()
-			awful.spawn("dmenu_run -m " .. awful.screen.focused().index - 1)
+			awful.spawn('dmenu_run -i -b -l 10 -nb "#111111" -m ' .. awful.screen.focused().index - 1)
 		end, { description = "Launch dmenu on the current screen", group = "launcher" }),
 
 		awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
@@ -52,17 +52,17 @@ M.clientkeys = function(modkey)
 			c:kill()
 		end, { description = "close", group = "client" }),
 
-		awful.key({ modkey }, "f", function(c)
+		awful.key({ modkey, "Shift" }, "f", function(c)
 			c.fullscreen = not c.fullscreen
 			c:raise()
 		end, { description = "toggle fullscreen", group = "client" }),
 
-		awful.key(
-			{ modkey, "Shift" },
-			"f",
-			awful.client.floating.toggle,
-			{ description = "toggle floating", group = "client" }
-		),
+		-- awful.key(
+		-- 	{ modkey, "Shift" },
+		-- 	"f",
+		-- 	awful.client.floating.toggle,
+		-- 	{ description = "toggle floating", group = "client" }
+		-- ),
 
 		awful.key({ modkey, "Shift" }, ",", function(c)
 			c:move_to_screen()
