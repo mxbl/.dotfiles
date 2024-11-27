@@ -35,13 +35,13 @@ M.globalkeys = function(modkey)
 		awful.key({ modkey, "Shift" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 
 		awful.key({ modkey }, "p", function()
-			awful.spawn('dmenu_run -i -b -l 10 -nb "#111111" -m ' .. awful.screen.focused().index - 1)
-		end, { description = "Launch dmenu on the current screen", group = "launcher" }),
+			awful.spawn('rofi -show combi -combi-modi "window,drun,ssh" -modi combi')
+		end, { description = "Launch rofi on the current screen", group = "launcher" }),
 
 		awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
-		awful.key({ modkey }, "space", function()
-			Keyboardlayout.next_layout()
+		awful.key({ modkey }, "Return", function()
+			awful.spawn("alacritty")
 		end)
 	)
 end
